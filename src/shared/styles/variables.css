@@ -1,0 +1,121 @@
+:root {
+  /* ══════════════════════════════════════
+     Цвета — фон и текст
+  ══════════════════════════════════════ */
+  --bg-color:       #F4F7FB;   /* светло-голубоватый нейтральный */
+  --bg-surface:     #FFFFFF;
+  --bg-muted:       #EDF2F9;
+
+  --text-primary:   #0F2137;   /* глубокий тёмно-синий */
+  --text-secondary: #4A6080;
+  --text-muted:     #8FA3BF;
+  --text-faint:     rgba(15, 33, 55, 0.38);
+
+  --white: #FFFFFF;
+
+  /* ══════════════════════════════════════
+     Акценты — медицинский/доверие
+  ══════════════════════════════════════ */
+  --accent-primary:     #2D7DD2;   /* основной синий */
+  --accent-primary-dark:#1A5FAF;
+  --accent-primary-soft:rgba(45, 125, 210, 0.12);
+  --accent-teal:        #1AAFA0;   /* бирюзовый — детская нота */
+  --accent-teal-soft:   rgba(26, 175, 160, 0.12);
+  --accent-green:       #3DAA6E;   /* успех / прогресс */
+  --accent-green-soft:  rgba(61, 170, 110, 0.12);
+  --accent-warm:        #F5A623;   /* тёплый акцент для CTA */
+  --accent-warm-soft:   rgba(245, 166, 35, 0.12);
+
+  /* ══════════════════════════════════════
+     Шрифты
+     Inter    — UI, текст, цифры
+     Unbounded — заголовки, бренд
+  ══════════════════════════════════════ */
+  --font-heading: 'Unbounded', sans-serif;
+  --font-sans:    'Inter', sans-serif;
+
+  /* ══════════════════════════════════════
+     Отступы
+  ══════════════════════════════════════ */
+  --spacing-xs:  4px;
+  --spacing-sm:  8px;
+  --spacing-md:  16px;
+  --spacing-lg:  24px;
+  --spacing-xl:  40px;
+  --spacing-xxl: 64px;
+
+  /* ══════════════════════════════════════
+     Скругления
+  ══════════════════════════════════════ */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+
+  /* ══════════════════════════════════════
+     Тени
+  ══════════════════════════════════════ */
+  --shadow-soft:   0 2px 8px rgba(15, 33, 55, 0.06);
+  --shadow-card:   0 4px 20px rgba(15, 33, 55, 0.08), 0 1px 4px rgba(15, 33, 55, 0.04);
+  --shadow-strong: 0 12px 40px rgba(15, 33, 55, 0.12);
+  --shadow-btn:    0 4px 16px rgba(45, 125, 210, 0.32);
+
+  /* ══════════════════════════════════════
+     Разделители / border
+  ══════════════════════════════════════ */
+  --divider:       rgba(15, 33, 55, 0.08);
+  --border-subtle: rgba(15, 33, 55, 0.06);
+
+  /* ══════════════════════════════════════
+     App Shell
+     appbar:    safe-area-top + 56px
+     bottomnav: safe-area-bottom + 72px
+     Tablet/Desktop: bottomnav = 0 (BottomNav скрыт)
+  ══════════════════════════════════════ */
+  --appbar-h:    calc(env(safe-area-inset-top, 0px) + 56px);
+  --bottomnav-h: calc(env(safe-area-inset-bottom, 0px) + 72px);
+  --screen-h:    calc(100dvh - var(--appbar-h) - var(--bottomnav-h));
+
+  /* ══════════════════════════════════════
+     Breakpoints (для JS)
+  ══════════════════════════════════════ */
+  --bp-tablet:  768px;
+  --bp-desktop: 1024px;
+  --bp-wide:    1280px;
+
+  /* ══════════════════════════════════════
+     Переходы
+  ══════════════════════════════════════ */
+  --transition-fast:   all 0.15s ease;
+  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ══════════════════════════════════════
+     Ритм секций
+  ══════════════════════════════════════ */
+  --section-gap:     24px;
+  --content-max-w:   480px;       /* mobile max */
+  --content-pad:     20px;
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+  :root {
+    --appbar-h:       64px;
+    --bottomnav-h:    0px;            /* Bottom nav скрыт, sidebar */
+    --screen-h:       calc(100dvh - var(--appbar-h));
+    --content-max-w:  680px;
+    --content-pad:    32px;
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  :root {
+    --appbar-h:       72px;
+    --content-max-w:  860px;
+    --content-pad:    48px;
+  }
+}

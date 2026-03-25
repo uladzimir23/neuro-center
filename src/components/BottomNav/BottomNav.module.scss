@@ -1,0 +1,89 @@
+// ──────────────────────────────────────────────
+//   BottomNav — только mobile (скрыт на 768px+)
+// ──────────────────────────────────────────────
+
+.nav {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+  left: 14px;
+  right: 14px;
+  z-index: 200;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+
+  // Скрыть на tablet+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// ── Tab button ──
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--radius-pill);
+}
+
+// ── Active pill ──
+.pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90%;
+  height: 90%;
+  border-radius: var(--radius-pill);
+  background: var(--accent-primary-soft);
+  z-index: 0;
+}
+
+.iconWrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: block;
+  color: var(--text-muted);
+  transition: color 0.22s ease;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  transition: color 0.22s ease, font-weight 0.22s ease;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.itemActive {
+  .icon  { color: var(--accent-primary); }
+  .label { color: var(--accent-primary); font-weight: 700; }
+}
